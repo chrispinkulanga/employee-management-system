@@ -1,0 +1,73 @@
+doctype html
+html
+  head
+    title Employee Management System
+
+  style.
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: blue;
+      font-weight: bold;
+    }
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+  body
+    h2 Employee Management System
+    nav
+      a(href='/home') Home
+      a(href='/about') About Us
+      a(href='/contact') Contact Us
+      a(href='/login') Login
+
+    table
+      tr
+        th Id
+        th Name
+        th Post
+        th Salary
+        th Delete
+      each element in data
+        tr
+          td= element.employeeId
+          td= element.employeeName
+          td= element.employeePost
+          td= element.employeeSalary
+          td
+            form(action="/delete", method="post")
+              input(type="text", style="display: none", name="employeeId", value=element.employeeId)
+              button(type="submit") Delete
+
+    h2 Add Employee
+    form(action="/", method="post")
+      input(type="text", placeholder="Employee Name", name="employeeName")
+      input(type="text", placeholder="Employee Post", name="employeePost")
+      input(type="text", placeholder="Employee Salary", name="employeeSalary")
+      button(type="submit") Submit
+
+    h2 Update Employee
+    form(action="/update", method="post")
+      input(type="text", placeholder="Employee Id", name="employeeId")
+      input(type="text", placeholder="Employee Name", name="employeeName")
+      input(type="text", placeholder="Employee Post", name="employeePost")
+      input(type="text", placeholder="Employee Salary", name="employeeSalary")
+      button(type="submit") Update
+  
