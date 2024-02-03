@@ -1,0 +1,51 @@
+block content
+  style.
+    .login-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    }
+    .login-container h2 {
+    color: #333;
+    }
+    .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    }
+    .login-form label {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+    }
+    .login-form input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    }
+    .login-form button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    }
+    .login-form button:hover {
+    background-color: #45a049;
+    }
+  .login-container
+  h2 Login
+  form.login-form
+    label(for='username') Username:
+    input#username(type='text' name='username' required='')
+    label(for='password') Password:
+    input#password(type='password' name='password' required='')
+    button(type='submit') Login
